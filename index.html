@@ -5,203 +5,304 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalinowe Pola Golf Course</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Custom styles to refine the design beyond basic Tailwind */
+    /* Custom fonts from Google Fonts for closer match */
+    body {
+      font-family: 'Montserrat', sans-serif; /* A bit more modern and sleek */
+    }
+    .font-playfair {
+      font-family: 'Playfair Display', serif; /* For headings where a more elegant look is needed */
+    }
+
+    /* Custom colors based on the image */
+    .bg-orange-custom {
+      background-color: #F8E8DA; /* Adjusted from light orange for closer match */
+    }
+    .bg-teal-custom {
+      background-color: #00796B; /* Adjusted from teal for closer match */
+    }
+    .text-teal-accent {
+        color: #00796B; /* For accents like list bullets */
+    }
+    .border-gray-light {
+        border-color: #E0E0E0; /* Lighter border for table */
+    }
+    .bg-gray-table-header {
+        background-color: #F5F5F5; /* Lighter grey for table header */
+    }
+
+    /* Header specific styles */
+    .header-logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; /* Space between logo and text */
+    }
     .header-logo-text {
-      font-size: 1.1rem; /* Adjust as needed */
+        font-size: 1.15rem; /* Slightly larger than default text-lg */
+        font-weight: 700; /* Bolder for the title */
     }
-    .header-weather {
-      min-width: 80px; /* Ensure consistent width for weather */
-      text-align: right;
+    .header-weather p {
+        font-size: 0.75rem; /* Smaller text for weather */
+        color: #6B7280; /* Gray-500 */
     }
+    .header-weather p:first-child {
+        font-size: 0.875rem; /* Slightly larger "Weather" text */
+        color: #4B5563; /* Gray-700 */
+        margin-bottom: 0.125rem; /* Small space */
+    }
+
+    /* Hero Section Specifics */
     .hero-section {
-      position: relative;
-      background-image: url('public/hero.png'); /* Ensure this image exists */
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
+        background-image: url('public/hero.png'); /* Ensure this path is correct */
+        background-size: cover;
+        background-position: center;
+        height: 450px; /* Increased height for better visual impact */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
     }
     .hero-overlay {
-      background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for text readability */
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        background-color: rgba(0, 0, 0, 0.45); /* Slightly darker overlay */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+    .hero-text {
+        font-size: 3.5rem; /* Larger font for hero text */
+        font-weight: 700;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Subtle text shadow */
+    }
+
+    /* News Section Specifics */
     .news-item {
-        background-color: #f7f7f7; /* Light background for news items */
+        background-color: white;
         padding: 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border-radius: 0.75rem; /* More rounded corners */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* More prominent shadow */
+        transition: transform 0.2s ease-in-out; /* Add hover effect */
     }
-    .orange-section {
-      background-color: #fce2cc; /* A custom light orange from the image */
+    .news-item:hover {
+        transform: translateY(-5px); /* Lift on hover */
     }
-    .teal-section {
-      background-color: #008080; /* A custom teal from the image */
+    .news-item h3 {
+        font-size: 1.35rem; /* Slightly larger heading */
+        font-weight: 600;
+        margin-bottom: 0.75rem; /* More space */
+        color: #333;
+    }
+    .news-item p {
+        font-size: 0.95rem; /* Slightly smaller paragraph text */
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* Tournaments Section Specifics */
+    .tournament-list li {
+        margin-bottom: 0.75rem; /* Spacing between list items */
+        display: flex;
+        align-items: flex-start;
+        font-size: 1.05rem; /* Slightly larger text */
+        color: #333;
+    }
+    .tournament-list li .bullet {
+        font-size: 1.2rem; /* Larger bullet */
+        margin-right: 0.6rem;
+        line-height: 1;
+    }
+
+    /* Accommodation Section Specifics */
+    .accommodation-card img {
+        height: 250px; /* Fixed height for images */
+        object-fit: cover;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .accommodation-card h3 {
+        font-size: 1.4rem; /* Larger heading */
+        margin-bottom: 0.6rem;
+    }
+    .accommodation-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Golf Academy Section Specifics */
+    .academy-table {
+        border-collapse: collapse; /* Remove space between borders */
     }
     .academy-table th, .academy-table td {
-      border-bottom: 1px solid #e2e8f0; /* Light gray border for table */
+        padding: 1rem 1.5rem; /* More padding */
+        border: 1px solid #E0E0E0; /* Subtle borders */
+        text-align: center;
     }
-    .academy-table thead th {
-        background-color: #edf2f7; /* Lighter background for table header */
+    .academy-table th {
+        background-color: #F5F5F5;
+        font-weight: 600;
+        color: #4A5568; /* Darker text for header */
+        text-align: left; /* Left align header text */
+    }
+    .academy-table th:nth-child(2), .academy-table th:nth-child(3) {
+        text-align: center; /* Center member/guest headers */
+    }
+    .academy-table tr:nth-child(even) {
+        background-color: #FAFAFA; /* Subtle stripe effect */
+    }
+    .academy-table td:first-child {
+        text-align: left; /* Left align first column */
+    }
+
+    /* Contact Section Specifics */
+    .contact-info p {
+        margin-bottom: 0.5rem; /* More spacing between lines */
+        font-size: 1.05rem;
+        color: #4A5568;
+    }
+    .contact-info p.mt-4 {
+        margin-top: 1rem;
     }
     .map-container iframe {
-        border: 1px solid #d1d5db; /* Border around the map */
-    }
-    .contact-info p {
-        margin-bottom: 0.25rem; /* Closer spacing for contact details */
-    }
-    .news-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        max-width: 800px; /* Adjust max width as needed */
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
-    .news-container h3 {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
+        height: 320px; /* Taller map */
+        border: 1px solid #D1D5DB; /* Light border */
+        border-radius: 0.75rem; /* Rounded corners for map */
     }
   </style>
 </head>
 <body class="font-sans text-gray-800">
 
-  <header class="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
-    <div class="flex items-center gap-2">
-      <div class="header-logo-text flex items-center">
-          <!--img src="public/logo.png" alt="Logo" class="h-10 mr-2" /--> <h1 class="text-lg font-bold">Kalinowe Pola Golf Course</h1>
-      </div>
+  <header class="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50 md:px-12">
+    <div class="header-logo-container">
+      <!--img src="public/logo.svg" alt="Logo" class="h-10" /--> <h1 class="header-logo-text">Kalinowe Pola Golf Course</h1>
     </div>
-    <nav class="hidden md:flex gap-6 text-sm">
-      <a href="#" class="hover:text-teal-600 font-semibold">Home</a>
-      <a href="#" class="hover:text-teal-600">Tournaments</a>
-      <a href="#" class="hover:text-teal-600">Accommodation</a>
-      <a href="#" class="hover:text-teal-600">Academy</a>
-      <a href="#" class="hover:text-teal-600">Contact</a>
+    <nav class="hidden md:flex gap-8 text-base">
+      <a href="#" class="hover:text-teal-accent font-semibold transition-colors duration-200">Home</a>
+      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Tournaments</a>
+      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Accommodation</a>
+      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Academy</a>
+      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Contact</a>
     </nav>
-    <div class="header-weather text-sm text-right">
-      <p class="text-gray-600">Weather</p>
-      <p class="text-xs text-gray-500">☀ 25°C</p>
+    <div class="header-weather">
+      <p>Weather</p>
+      <p>☀ 25°C</p>
     </div>
   </header>
 
   <section class="hero-section">
     <div class="hero-overlay">
-      <h2 class="text-4xl md:text-5xl font-bold">Welcome to Our Golf Course</h2>
+      <h2 class="hero-text font-playfair">Welcome to Our Golf Course</h2>
     </div>
   </section>
 
-  <section class="px-6 py-16 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-10">Latest News</h2>
-    <div class="news-container">
-      <div class="news-item text-left">
-        <h3 class="text-xl font-semibold mb-2">Course Opening</h3>
-        <p class="text-base text-gray-700">The course officially opens on April 1st! We are excited for a new season full of exciting rounds and beautiful weather. Get ready to tee off!</p>
+  <section class="px-6 py-20 bg-gray-50 text-center md:px-12">
+    <h2 class="text-4xl font-playfair font-bold mb-14">Latest News</h2>
+    <div class="grid md:grid-cols-2 gap-10 text-left max-w-6xl mx-auto">
+      <div class="news-item">
+        <h3 class="font-playfair">Course Opening</h3>
+        <p>The course officially opens on April 1st! We are excited for a new season full of exciting rounds and beautiful weather. Get ready to tee off!</p>
       </div>
-      <div class="news-item text-left">
-        <h3 class="text-xl font-semibold mb-2">Upcoming Events</h3>
-        <p class="text-base text-gray-700">Check our updated 2025 tournament calendar. We have a variety of events planned for all skill levels. Don't miss out!</p>
+      <div class="news-item">
+        <h3 class="font-playfair">Upcoming Events</h3>
+        <p>Check our updated 2025 tournament calendar. We have a variety of events planned for all skill levels. Don't miss out on the action!</p>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-16 orange-section">
-    <h2 class="text-3xl font-bold text-center mb-10">Tournaments 2025</h2>
-    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
+  <section class="px-6 py-20 bg-orange-custom md:px-12">
+    <h2 class="text-4xl font-playfair font-bold text-center mb-14">Tournaments 2025</h2>
+    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
       <div class="flex flex-col items-center">
-        <img src="public/tournaments.jpg" alt="Tournaments" class="rounded-lg shadow-lg mb-6 w-full max-w-md h-56 object-cover" />
-        <ul class="space-y-3 text-lg text-gray-700 w-full max-w-md text-left">
-          <li><span class="text-teal-600 font-bold">🔹</span> April 22 – Spring Cup</li>
-          <li><span class="text-teal-600 font-bold">🔹</span> May 10 – Kalinowe Trophy</li>
-          <li><span class="text-teal-600 font-bold">🔹</span> June 8 – Summer Open</li>
+        <img src="public/tournaments.jpg" alt="Tournaments" class="rounded-lg shadow-lg mb-8 w-full h-64 object-cover" />
+        <ul class="tournament-list w-full max-w-md">
+          <li><span class="bullet text-teal-accent">◆</span> April 22 – Spring Cup</li>
+          <li><span class="bullet text-teal-accent">◆</span> May 10 – Kalinowe Trophy</li>
+          <li><span class="bullet text-teal-accent">◆</span> June 8 – Summer Open</li>
         </ul>
       </div>
       <div class="flex flex-col items-center">
-        <img src="public/golf.jpg" alt="Golf course" class="rounded-lg shadow-lg mb-6 w-full max-w-md h-56 object-cover" />
-        <ul class="space-y-3 text-lg text-gray-700 w-full max-w-md text-left">
-          <li><span class="text-teal-600 font-bold">🔹</span> July 15 – Junior Challenge</li>
-          <li><span class="text-teal-600 font-bold">🔹</span> August 23 – Regional Masters</li>
-          <li><span class="text-teal-600 font-bold">🔹</span> October 12 – Grand Finale</li>
+        <img src="public/golf.jpg" alt="Golf course" class="rounded-lg shadow-lg mb-8 w-full h-64 object-cover" />
+        <ul class="tournament-list w-full max-w-md">
+          <li><span class="bullet text-teal-accent">◆</span> July 15 – Junior Challenge</li>
+          <li><span class="bullet text-teal-accent">◆</span> August 23 – Regional Masters</li>
+          <li><span class="bullet text-teal-accent">◆</span> October 12 – Grand Finale</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-16 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-10">Our Golf Course</h2>
-    <p class="max-w-4xl mx-auto text-lg text-gray-700 mb-10">
-      Kalinowe Pola Golf Course stretches over 60 hectares of meticulously maintained greens and fairways. With 18 challenging holes, strategic bunkers, and breathtaking natural views, our course is designed to provide an exceptional golfing experience for both beginners and seasoned professionals.
+  <section class="px-6 py-20 bg-white text-center md:px-12">
+    <h2 class="text-4xl font-playfair font-bold mb-14">Our Golf Course</h2>
+    <p class="max-w-4xl mx-auto text-lg text-gray-700 mb-14 leading-relaxed">
+      Kalinowe Pola Golf Course stretches over 60 hectares of meticulously maintained greens and fairways. With 18 challenging holes, strategic bunkers, and breathtaking natural views, our course is designed to provide an exceptional golfing experience for both beginners and seasoned professionals alike.
     </p>
-    <img src="public/hero2.png" alt="Golf Course Overview" class="w-full max-w-5xl mx-auto rounded-lg shadow-lg h-96 object-cover" />
-  </section>
+    <img src="public/course_overview.jpg" alt="Golf Course Overview" class="w-full max-w-5xl mx-auto rounded-lg shadow-lg h-96 object-cover" /> </section>
 
-  <section class="px-6 py-16 teal-section text-white">
-    <h2 class="text-3xl font-bold text-center mb-10">Accommodation</h2>
-    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-      <div>
-        <img src="public/rooms.jpg" alt="Rooms" class="rounded-lg shadow-lg mb-6 w-full h-64 object-cover" />
-        <h3 class="text-xl font-semibold mb-3">Comfort Rooms</h3>
-        <p class="text-base">Experience comfort and convenience in our spacious rooms, perfectly designed for players who want to stay just steps away from the green. Each room offers a serene environment to relax after a day on the course.</p>
+  <section class="px-6 py-20 bg-teal-custom text-white md:px-12">
+    <h2 class="text-4xl font-playfair font-bold text-center mb-14">Accommodation</h2>
+    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <div class="accommodation-card">
+        <img src="public/rooms.jpg" alt="Comfort Rooms" />
+        <h3 class="font-playfair mt-6">Comfort Rooms</h3>
+        <p>Experience comfort and convenience in our spacious rooms, perfectly designed for players who want to stay just steps away from the green. Each room offers a serene environment to relax after a day on the course.</p>
       </div>
-      <div>
-        <img src="public/rooms2.jpg" alt="Suites" class="rounded-lg shadow-lg mb-6 w-full h-64 object-cover" />
-        <h3 class="text-xl font-semibold mb-3">Luxury Suites</h3>
-        <p class="text-base">Indulge in unparalleled luxury with our exquisite suites. Ideal for a relaxing getaway amidst nature, our suites provide full on-site service, premium amenities, and stunning views for an unforgettable experience.</p>
+      <div class="accommodation-card">
+        <img src="public/rooms2.jpg" alt="Luxury Suites" />
+        <h3 class="font-playfair mt-6">Luxury Suites</h3>
+        <p>Indulge in unparalleled luxury with our exquisite suites. Ideal for a relaxing getaway amidst nature, our suites provide full on-site service, premium amenities, and stunning views for an unforgettable experience.</p>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-16 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-10">Golf Academy</h2>
-    <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-10">
+  <section class="px-6 py-20 bg-gray-50 text-center md:px-12">
+    <h2 class="text-4xl font-playfair font-bold mb-14">Golf Academy</h2>
+    <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-14 leading-relaxed">
       Our Golf Academy offers comprehensive lessons tailored for all skill levels, from absolute beginners to advanced players looking to refine their game. All lessons are taught by certified PGA professionals dedicated to helping you achieve your golfing goals.
     </p>
-    <div class="max-w-xl mx-auto text-left bg-white rounded-lg shadow-lg overflow-hidden">
-      <table class="w-full text-base academy-table">
+    <div class="max-w-2xl mx-auto text-left bg-white rounded-lg shadow-lg overflow-hidden border border-gray-light">
+      <table class="w-full academy-table">
         <thead>
-          <tr class="bg-gray-200">
-            <th class="p-4 text-left font-semibold text-gray-700">Lesson</th>
-            <th class="p-4 text-center font-semibold text-gray-700">Members</th>
-            <th class="p-4 text-center font-semibold text-gray-700">Guests</th>
+          <tr>
+            <th>Lesson</th>
+            <th>Members</th>
+            <th>Guests</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="p-4">Golf Academy (1h)</td>
-            <td class="p-4 text-center">70 zł</td>
-            <td class="p-4 text-center">90 zł</td>
+            <td>Golf Academy (1h)</td>
+            <td>70 zł</td>
+            <td>90 zł</td>
           </tr>
           <tr>
-            <td class="p-4">Individual Lesson (30 min)</td>
-            <td class="p-4 text-center">40 zł</td>
-            <td class="p-4 text-center">55 zł</td>
+            <td>Individual Lesson (30 min)</td>
+            <td>40 zł</td>
+            <td>55 zł</td>
           </tr>
           <tr>
-            <td class="p-4">Group Lesson (1.5h, per person)</td>
-            <td class="p-4 text-center">60 zł</td>
-            <td class="p-4 text-center">80 zł</td>
+            <td>Group Lesson (1.5h, per person)</td>
+            <td>60 zł</td>
+            <td>80 zł</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section class="px-6 py-16 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-10">Contact Us</h2>
-    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto text-lg">
+  <section class="px-6 py-20 bg-white md:px-12">
+    <h2 class="text-4xl font-playfair font-bold text-center mb-14">Contact Us</h2>
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto text-lg">
       <div class="contact-info">
-        <h3 class="text-xl font-semibold mb-3">Club Address</h3>
+        <h3 class="text-xl font-semibold mb-4">Club Address</h3>
         <p>ul. Golfowa 1</p>
         <p>66-200 Świebodzin</p>
         <p>Poland</p>
@@ -209,19 +310,22 @@
         <p>✉️ contact@kalinowepola.pl</p>
       </div>
       <div class="contact-info">
-        <h3 class="text-xl font-semibold mb-3">Billing Address</h3>
+        <h3 class="text-xl font-semibold mb-4">Billing Address</h3>
         <p>Kalinowe Pola Sp. z o.o.</p>
         <p>ul. Rechnicka 3</p>
         <p>66-200 Świebodzin</p>
         <p class="mt-4">VAT: PL123456789</p>
       </div>
     </div>
-    <div class="mt-12 w-full max-w-5xl mx-auto map-container">
-      <iframe class="w-full h-80 rounded-lg shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.782859186642!2d15.3400039!3d52.3378512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4706240d99211c47%3A0xb3e120d912235967!2sKalinowe%20Pola%20Golf%20Course!5e0!3m2!1sen!2spl!4v1700000000000!5m2!1sen!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="mt-16 w-full max-w-5xl mx-auto map-container">
+      <iframe class="w-full h-80 rounded-lg shadow-lg border-gray-300"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102464.3039017646!2d15.340071378897594!3d52.23595671569426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47065ffefd99e05f%3A0x6b4a5d8f6d8c0b2c!2sKalinowe%20Pola%20Golf%20Course!5e0!3m2!1sen!2spl!4v1700000000000!5m2!1sen!2spl"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </section>
 
-  <footer class="text-center text-sm text-gray-500 py-8 bg-gray-100">
+  <footer class="text-center text-base text-gray-500 py-10 bg-gray-100">
     © 2025 Kalinowe Pola Golf Course. All rights reserved.
   </footer>
 

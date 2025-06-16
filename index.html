@@ -54,11 +54,11 @@
         margin-bottom: 0.125rem; /* Small space */
     }
 
-    /* Hero Section Specifics */
+    /* Hero Section Specifics - Now using CSS background-image */
     .hero-section {
-        background-image: url('public/hero.png'); /* Ensure this path is correct */
-        background-size: cover;
-        background-position: center;
+        background-image: url('public/hero.png'); /* Set background image here */
+        background-size: cover; /* Cover the entire section */
+        background-position: center; /* Center the image */
         height: 450px; /* Increased height for better visual impact */
         position: relative;
         display: flex;
@@ -125,7 +125,7 @@
     /* Accommodation Section Specifics */
     .accommodation-card img {
         height: 250px; /* Fixed height for images */
-        object-fit: cover;
+        object-fit: cover; /* Ensures image covers the area without distortion */
         border-radius: 0.75rem;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
@@ -183,7 +183,8 @@
 
   <header class="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50 md:px-12">
     <div class="header-logo-container">
-      <!--img src="public/logo.svg" alt="Logo" class="h-10" /--> <h1 class="header-logo-text">Kalinowe Pola Golf Course</h1>
+      <img src="public/logo.svg" alt="Logo" class="h-10" />
+      <h1 class="header-logo-text">Kalinowe Pola Golf Course</h1>
     </div>
     <nav class="hidden md:flex gap-8 text-base">
       <a href="#" class="hover:text-teal-accent font-semibold transition-colors duration-200">Home</a>
@@ -245,7 +246,8 @@
     <p class="max-w-4xl mx-auto text-lg text-gray-700 mb-14 leading-relaxed">
       Kalinowe Pola Golf Course stretches over 60 hectares of meticulously maintained greens and fairways. With 18 challenging holes, strategic bunkers, and breathtaking natural views, our course is designed to provide an exceptional golfing experience for both beginners and seasoned professionals alike.
     </p>
-    <img src="public/course_overview.jpg" alt="Golf Course Overview" class="w-full max-w-5xl mx-auto rounded-lg shadow-lg h-96 object-cover" /> </section>
+    <img src="public/hero2.png" alt="Golf Course Overview" class="w-full max-w-5xl mx-auto rounded-lg shadow-lg h-96 object-cover" />
+  </section>
 
   <section class="px-6 py-20 bg-teal-custom text-white md:px-12">
     <h2 class="text-4xl font-playfair font-bold text-center mb-14">Accommodation</h2>
@@ -319,7 +321,7 @@
     </div>
     <div class="mt-16 w-full max-w-5xl mx-auto map-container">
       <iframe class="w-full h-80 rounded-lg shadow-lg border-gray-300"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102464.3039017646!2d15.340071378897594!3d52.23595671569426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47065ffefd99e05f%3A0x6b4a5d8f6d8c0b2c!2sKalinowe%20Pola%20Golf%20Course!5e0!3m2!1sen!2spl!4v1700000000000!5m2!1sen!2spl"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.227441315875!2d15.3533924!3d52.2476566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47061d471d6d6e1b%3A0x47061d471d6d6e1b!2sKalinowe%20Pola%20Golf%20Course!5e0!3m2!1sen!2spl!4v1700000000000!5m2!1sen!2spl"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>

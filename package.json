@@ -1,0 +1,11 @@
+{
+  "name": "golf-website",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.13"
+  }
+}

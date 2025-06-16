@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalinowe Pola Golf Course</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <!-- img src="public/logo.svg" alt="Logo" class="h-8" /-->
+      <h1 class="text-lg font-bold">Kalinowe Pola Golf Course</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">Tournaments</a>
+      <a href="#" class="hover:underline">Accommodation</a>
+      <a href="#" class="hover:underline">Academy</a>
+      <a href="#" class="hover:underline">Contact</a>
+    </nav>
+    <div class="text-sm text-right">
+      <p>Weather</p>
+      <p class="text-xs text-gray-500">☀ 25°C</p>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <img src="public/hero.png" alt="Golf" class="w-full h-[400px] object-cover" />
+    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center text-white text-3xl font-bold">
+      Welcome to Our Golf Course
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="px-6 py-12 bg-white text-center">
+    <h2 class="text-2xl font-bold mb-6">Latest News</h2>
+    <div class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+      <div>
+        <h3 class="text-lg font-semibold">Course Opening</h3>
+        <p class="text-sm">The course opens on April 1st! Ready for a new season.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Upcoming Events</h3>
+        <p class="text-sm">Check our 2025 tournament calendar updated regularly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournaments -->
+  <section class="px-6 py-12 bg-orange-100">
+    <h2 class="text-2xl font-bold text-center mb-6">Tournaments 2025</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div>
+        <img src="public/tournaments.jpg" alt="Tournaments" class="rounded-lg shadow-md mb-4 w-full h-48 object-cover" />
+        <ul class="space-y-2 text-sm">
+          <li>🔹 April 22 – Spring Cup</li>
+          <li>🔹 May 10 – Kalinowe Trophy</li>
+          <li>🔹 June 8 – Summer Open</li>
+        </ul>
+      </div>
+      <div>
+        <img src="public/golf.jpg" alt="Golf course" class="rounded-lg shadow-md mb-4 w-full h-48 object-cover" />
+        <ul class="space-y-2 text-sm">
+          <li>🔹 July 15 – Junior Challenge</li>
+          <li>🔹 August 23 – Regional Masters</li>
+          <li>🔹 October 12 – Grand Finale</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Golf Course -->
+  <section class="px-6 py-12 bg-white text-center">
+    <h2 class="text-2xl font-bold mb-6">Our Golf Course</h2>
+    <p class="max-w-3xl mx-auto text-sm">
+      Kalinowe Pola stretches over 60 hectares with 18 holes, strategic bunkers, and breathtaking views. Designed for both beginners and professionals.
+    </p>
+  </section>
+
+  <!-- Accommodation -->
+  <section class="px-6 py-12 bg-teal-600 text-white">
+    <h2 class="text-2xl font-bold text-center mb-6">Accommodation</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div>
+        <img src="public/rooms.jpg" alt="Rooms" class="rounded-lg shadow-md mb-4 w-full h-48 object-cover" />
+        <h3 class="font-semibold mb-2">Comfort Rooms</h3>
+        <p class="text-sm">Spacious rooms for players who want to stay near the course.</p>
+      </div>
+      <div>
+        <img src="public/rooms2.jpg" alt="Suites" class="rounded-lg shadow-md mb-4 w-full h-48 object-cover" />
+        <h3 class="font-semibold mb-2">Luxury Suites</h3>
+        <p class="text-sm">Perfect for a relaxing getaway in nature, with full on-site service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Golf Academy -->
+  <section class="px-6 py-12 bg-gray-100 text-center">
+    <h2 class="text-2xl font-bold mb-6">Golf Academy</h2>
+    <p class="max-w-xl mx-auto text-sm mb-4">
+      Lessons for all skill levels, from beginners to advanced players, taught by certified professionals.
+    </p>
+    <div class="max-w-md mx-auto text-left">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-2 text-left">Lesson</th>
+            <th class="p-2">Members</th>
+            <th class="p-2">Guests</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2">Golf Academy (1h)</td>
+            <td class="p-2">70 zł</td>
+            <td class="p-2">90 zł</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="px-6 py-12 bg-white">
+    <h2 class="text-2xl font-bold text-center mb-6">Contact</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-sm">
+      <div>
+        <h3 class="font-semibold">Club Address</h3>
+        <p>ul. Golfowa 1<br>66-200 Świebodzin<br>Poland</p>
+        <p class="mt-2">📞 +48 123 456 789</p>
+        <p>✉️ contact@kalinowepola.pl</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Billing Address</h3>
+        <p>Kalinowe Pola Sp. z o.o.<br>ul. Rechnicka 3<br>66-200 Świebodzin</p>
+        <p class="mt-2">VAT: PL123456789</p>
+      </div>
+    </div>
+    <div class="mt-8 w-full">
+      <iframe class="w-full h-64 border" src="https://maps.google.com/maps?q=kalinowe pola golf course&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-400 py-6">
+    © 2025 Kalinowe Pola Golf Course. All rights reserved.
+  </footer>
+
+</body>
+</html>

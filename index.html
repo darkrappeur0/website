@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,328 +7,713 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Custom fonts from Google Fonts for closer match */
     body {
-      font-family: 'Montserrat', sans-serif; /* A bit more modern and sleek */
-    }
-    .font-playfair {
-      font-family: 'Playfair Display', serif; /* For headings where a more elegant look is needed */
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f5f5f5;
     }
 
-    /* Custom colors based on the image */
-    .bg-orange-custom {
-      background-color: #F8E8DA; /* Adjusted from light orange for closer match */
-    }
-    .bg-teal-custom {
-      background-color: #00796B; /* Adjusted from teal for closer match */
-    }
-    .text-teal-accent {
-        color: #00796B; /* For accents like list bullets */
-    }
-    .border-gray-light {
-        border-color: #E0E0E0; /* Lighter border for table */
-    }
-    .bg-gray-table-header {
-        background-color: #F5F5F5; /* Lighter grey for table header */
+    /* Header styles */
+    .header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
-    /* Header specific styles */
-    .header-logo-container {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem; /* Space between logo and text */
-    }
-    .header-logo-text {
-        font-size: 1.15rem; /* Slightly larger than default text-lg */
-        font-weight: 700; /* Bolder for the title */
-    }
-    .header-weather p {
-        font-size: 0.75rem; /* Smaller text for weather */
-        color: #6B7280; /* Gray-500 */
-    }
-    .header-weather p:first-child {
-        font-size: 0.875rem; /* Slightly larger "Weather" text */
-        color: #4B5563; /* Gray-700 */
-        margin-bottom: 0.125rem; /* Small space */
+    .logo {
+      width: 180px;
+      height: auto;
     }
 
-    /* Hero Section Specifics - Now using CSS background-image */
+    .nav-link {
+      color: #8B7355;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #5A9B9B;
+    }
+
+    /* Weather widget */
+    .weather-widget {
+      background: #5A9B9B;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .weather-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .weather-info {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    /* Hero section */
     .hero-section {
-        background-image: url('public/hero.png'); /* Set background image here */
-        background-size: cover; /* Cover the entire section */
-        background-position: center; /* Center the image */
-        height: 450px; /* Increased height for better visual impact */
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-    }
-    .hero-overlay {
-        background-color: rgba(0, 0, 0, 0.45); /* Slightly darker overlay */
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .hero-text {
-        font-size: 3.5rem; /* Larger font for hero text */
-        font-weight: 700;
-        line-height: 1.2;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Subtle text shadow */
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./public/hero.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      padding-left: 80px;
     }
 
-    /* News Section Specifics */
+    .hero-menu {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-menu h3 {
+      color: #DAA520;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .hero-menu ul li {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #E0E0E0;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .hero-menu ul li:hover {
+      color: #DAA520;
+    }
+
+    /* Section styles */
+    .section-title {
+      color: #8B7355;
+      font-size: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
     .news-item {
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 0.75rem; /* More rounded corners */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* More prominent shadow */
-        transition: transform 0.2s ease-in-out; /* Add hover effect */
-    }
-    .news-item:hover {
-        transform: translateY(-5px); /* Lift on hover */
-    }
-    .news-item h3 {
-        font-size: 1.35rem; /* Slightly larger heading */
-        font-weight: 600;
-        margin-bottom: 0.75rem; /* More space */
-        color: #333;
-    }
-    .news-item p {
-        font-size: 0.95rem; /* Slightly smaller paragraph text */
-        line-height: 1.6;
-        color: #555;
+      background: white;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-left: 4px solid #DAA520;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     }
 
-    /* Tournaments Section Specifics */
+    .news-date {
+      color: #8B7355;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .news-title {
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .news-content {
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .read-more {
+      color: #5A9B9B;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    /* Tournament section */
+    .tournament-section {
+      background: linear-gradient(135deg, #FF6B35, #DAA520);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .tournament-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tournament-month {
+      margin-bottom: 30px;
+    }
+
+    .tournament-month h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #FFF;
+    }
+
+    .tournament-list {
+      list-style: none;
+      padding: 0;
+    }
+
     .tournament-list li {
-        margin-bottom: 0.75rem; /* Spacing between list items */
-        display: flex;
-        align-items: flex-start;
-        font-size: 1.05rem; /* Slightly larger text */
-        color: #333;
-    }
-    .tournament-list li .bullet {
-        font-size: 1.2rem; /* Larger bullet */
-        margin-right: 0.6rem;
-        line-height: 1;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
     }
 
-    /* Accommodation Section Specifics */
-    .accommodation-card img {
-        height: 250px; /* Fixed height for images */
-        object-fit: cover; /* Ensures image covers the area without distortion */
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .accommodation-card h3 {
-        font-size: 1.4rem; /* Larger heading */
-        margin-bottom: 0.6rem;
-    }
-    .accommodation-card p {
-        font-size: 0.95rem;
-        line-height: 1.6;
+    /* Course section */
+    .course-section {
+      background: white;
+      padding: 80px 0;
     }
 
-    /* Golf Academy Section Specifics */
-    .academy-table {
-        border-collapse: collapse; /* Remove space between borders */
-    }
-    .academy-table th, .academy-table td {
-        padding: 1rem 1.5rem; /* More padding */
-        border: 1px solid #E0E0E0; /* Subtle borders */
-        text-align: center;
-    }
-    .academy-table th {
-        background-color: #F5F5F5;
-        font-weight: 600;
-        color: #4A5568; /* Darker text for header */
-        text-align: left; /* Left align header text */
-    }
-    .academy-table th:nth-child(2), .academy-table th:nth-child(3) {
-        text-align: center; /* Center member/guest headers */
-    }
-    .academy-table tr:nth-child(even) {
-        background-color: #FAFAFA; /* Subtle stripe effect */
-    }
-    .academy-table td:first-child {
-        text-align: left; /* Left align first column */
+    .course-description {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: #666;
+      line-height: 1.8;
+      font-size: 16px;
     }
 
-    /* Contact Section Specifics */
+    /* Accommodation section */
+    .accommodation-section {
+      background: #5A9B9B;
+      color: white;
+      padding: 80px 0;
+    }
+
+    .accommodation-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .accommodation-details {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .accommodation-details h4 {
+      color: #DAA520;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .accommodation-details ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .accommodation-details ul li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .accommodation-details ul li:before {
+      content: "●";
+      color: #DAA520;
+      position: absolute;
+      left: 0;
+    }
+
+    .accommodation-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .accommodation-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Academy section */
+    .academy-section {
+      background: white;
+      padding: 80px 0;
+    }
+
+    .academy-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .academy-description {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .pricing-table {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .pricing-table th {
+      background: #8B7355;
+      color: white;
+      padding: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .pricing-table td {
+      padding: 15px 20px;
+      border-bottom: 1px solid #E0E0E0;
+      text-align: center;
+    }
+
+    .pricing-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .pricing-table tr:nth-child(even) {
+      background: #F9F9F9;
+    }
+
+    /* History section */
+    .history-section {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./public/hero2.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+    }
+
+    .history-content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* Contact section */
+    .contact-section {
+      background: #F5F5F5;
+      padding: 80px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-info h4 {
+      color: #8B7355;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
     .contact-info p {
-        margin-bottom: 0.5rem; /* More spacing between lines */
-        font-size: 1.05rem;
-        color: #4A5568;
+      color: #666;
+      margin-bottom: 8px;
+      font-size: 14px;
     }
-    .contact-info p.mt-4 {
-        margin-top: 1rem;
+
+    .map-container {
+      background: #E0E0E0;
+      height: 300px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
     }
-    .map-container iframe {
-        height: 320px; /* Taller map */
-        border: 1px solid #D1D5DB; /* Light border */
-        border-radius: 0.75rem; /* Rounded corners for map */
+
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #999;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #DAA520;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding-left: 20px;
+      }
+      
+      .tournament-grid,
+      .accommodation-info,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .accommodation-images {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-<body class="font-sans text-gray-800">
+<body>
 
-  <header class="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50 md:px-12">
-    <div class="header-logo-container">
-      <img src="public/logo.svg" alt="Logo" class="h-10" />
-      <h1 class="header-logo-text">Kalinowe Pola Golf Course</h1>
-    </div>
-    <nav class="hidden md:flex gap-8 text-base">
-      <a href="#" class="hover:text-teal-accent font-semibold transition-colors duration-200">Home</a>
-      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Tournaments</a>
-      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Accommodation</a>
-      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Academy</a>
-      <a href="#" class="hover:text-teal-accent transition-colors duration-200">Contact</a>
-    </nav>
-    <div class="header-weather">
-      <p>Weather</p>
-      <p>☀ 25°C</p>
+  <!-- Header -->
+  <header class="header">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'><text x='10' y='35' font-family='Arial' font-size='20' fill='%23333'>KP</text></svg>" alt="Kalinowe Pola Logo" class="logo h-12 mr-4">
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">KALINOWE POLA</h1>
+          <p class="text-sm text-gray-600">GOLF COURSE</p>
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href="#aktualnosci" class="nav-link">Aktualności</a>
+        <a href="#turnieje" class="nav-link">Turnieje</a>
+        <a href="#pole" class="nav-link">Pole</a>
+        <a href="#noclegi" class="nav-link">Noclegi</a>
+        <a href="#akademia" class="nav-link">Akademia</a>
+        <a href="#abc-golfa" class="nav-link">ABC Golfa</a>
+        <a href="#kontakt" class="nav-link">Kontakt</a>
+      </nav>
+      
+      <div class="weather-widget">
+        <p class="weather-title">Pogoda</p>
+        <div class="weather-info">
+          <span>Dziś</span>
+          <span>4°C</span>
+          <span>☁️</span>
+        </div>
+      </div>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-overlay">
-      <h2 class="hero-text font-playfair">Welcome to Our Golf Course</h2>
+    <div class="hero-menu">
+      <h3>Polecane Książki</h3>
+      <ul>
+        <li>Symulator</li>
+        <li>Etykieta Golfa</li>
+        <li>Zasady Gry</li>
+        <li>Pojęcia Golfowe</li>
+        <li>Historia Golfa</li>
+        <li>Noclegi</li>
+        <li>Polecane Filmy</li>
+        <li>Polecane Książki</li>
+      </ul>
     </div>
   </section>
 
-  <section class="px-6 py-20 bg-gray-50 text-center md:px-12">
-    <h2 class="text-4xl font-playfair font-bold mb-14">Latest News</h2>
-    <div class="grid md:grid-cols-2 gap-10 text-left max-w-6xl mx-auto">
+  <!-- Aktualności Section -->
+  <section id="aktualnosci" class="py-20 px-6">
+    <h2 class="section-title">Aktualności</h2>
+    <div class="max-w-4xl mx-auto">
       <div class="news-item">
-        <h3 class="font-playfair">Course Opening</h3>
-        <p>The course officially opens on April 1st! We are excited for a new season full of exciting rounds and beautiful weather. Get ready to tee off!</p>
+        <p class="news-date">2017-12-30</p>
+        <h3 class="news-title">Dzisiaj pole zamknięte.</h3>
+        <p class="news-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#" class="read-more">więcej ></a>
       </div>
+      
       <div class="news-item">
-        <h3 class="font-playfair">Upcoming Events</h3>
-        <p>Check our updated 2025 tournament calendar. We have a variety of events planned for all skill levels. Don't miss out on the action!</p>
+        <p class="news-date">2017-12-30</p>
+        <h3 class="news-title">Dzisiaj pole zamknięte.</h3>
+        <p class="news-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#" class="read-more">więcej ></a>
+      </div>
+      
+      <div class="news-item">
+        <p class="news-date">2017-12-30</p>
+        <h3 class="news-title">Dzisiaj pole zamknięte.</h3>
+        <p class="news-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#" class="read-more">więcej ></a>
+      </div>
+      
+      <div class="news-item">
+        <p class="news-date">2017-12-30</p>
+        <h3 class="news-title">Dzisiaj pole zamknięte.</h3>
+        <p class="news-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#" class="read-more">więcej ></a>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-20 bg-orange-custom md:px-12">
-    <h2 class="text-4xl font-playfair font-bold text-center mb-14">Tournaments 2025</h2>
-    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-      <div class="flex flex-col items-center">
-        <img src="public/tournaments.jpg" alt="Tournaments" class="rounded-lg shadow-lg mb-8 w-full h-64 object-cover" />
-        <ul class="tournament-list w-full max-w-md">
-          <li><span class="bullet text-teal-accent">◆</span> April 22 – Spring Cup</li>
-          <li><span class="bullet text-teal-accent">◆</span> May 10 – Kalinowe Trophy</li>
-          <li><span class="bullet text-teal-accent">◆</span> June 8 – Summer Open</li>
-        </ul>
-      </div>
-      <div class="flex flex-col items-center">
-        <img src="public/golf.jpg" alt="Golf course" class="rounded-lg shadow-lg mb-8 w-full h-64 object-cover" />
-        <ul class="tournament-list w-full max-w-md">
-          <li><span class="bullet text-teal-accent">◆</span> July 15 – Junior Challenge</li>
-          <li><span class="bullet text-teal-accent">◆</span> August 23 – Regional Masters</li>
-          <li><span class="bullet text-teal-accent">◆</span> October 12 – Grand Finale</li>
-        </ul>
+  <!-- Turnieje Section -->
+  <section id="turnieje" class="tournament-section">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title text-white">Turnieje</h2>
+      <h3 class="text-center text-2xl font-light mb-12">KALENDARZ TURNIEJÓW 2018</h3>
+      
+      <div class="tournament-grid">
+        <div>
+          <div class="tournament-month">
+            <h4>Kwiecień / April</h4>
+            <ul class="tournament-list">
+              <li>08.04 - Turniej Otwarcia Sezonu</li>
+              <li>22.04 - World Amateur Golfers Championship</li>
+              <li>28.04 - Junior Tournament</li>
+            </ul>
+          </div>
+          
+          <div class="tournament-month">
+            <h4>Czerwiec / June</h4>
+            <ul class="tournament-list">
+              <li>08.04 - Turniej Otwarcia Sezonu</li>
+              <li>22.04 - World Amateur Golfers Championship</li>
+              <li>28.04 - Junior Tournament</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="tournament-month">
+            <h4>Maj / May</h4>
+            <ul class="tournament-list">
+              <li>08.04 - Turniej Otwarcia Sezonu</li>
+              <li>22.04 - World Amateur Golfers Championship</li>
+              <li>28.04 - Junior Tournament</li>
+            </ul>
+          </div>
+          
+          <div class="tournament-month">
+            <h4>Lipiec / July</h4>
+            <ul class="tournament-list">
+              <li>08.04 - Turniej Otwarcia Sezonu</li>
+              <li>22.04 - World Amateur Golfers Championship</li>
+              <li>28.04 - Junior Tournament</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-20 bg-white text-center md:px-12">
-    <h2 class="text-4xl font-playfair font-bold mb-14">Our Golf Course</h2>
-    <p class="max-w-4xl mx-auto text-lg text-gray-700 mb-14 leading-relaxed">
-      Kalinowe Pola Golf Course stretches over 60 hectares of meticulously maintained greens and fairways. With 18 challenging holes, strategic bunkers, and breathtaking natural views, our course is designed to provide an exceptional golfing experience for both beginners and seasoned professionals alike.
-    </p>
-    <img src="public/hero2.png" alt="Golf Course Overview" class="w-full max-w-5xl mx-auto rounded-lg shadow-lg h-96 object-cover" />
-  </section>
-
-  <section class="px-6 py-20 bg-teal-custom text-white md:px-12">
-    <h2 class="text-4xl font-playfair font-bold text-center mb-14">Accommodation</h2>
-    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-      <div class="accommodation-card">
-        <img src="public/rooms.jpg" alt="Comfort Rooms" />
-        <h3 class="font-playfair mt-6">Comfort Rooms</h3>
-        <p>Experience comfort and convenience in our spacious rooms, perfectly designed for players who want to stay just steps away from the green. Each room offers a serene environment to relax after a day on the course.</p>
-      </div>
-      <div class="accommodation-card">
-        <img src="public/rooms2.jpg" alt="Luxury Suites" />
-        <h3 class="font-playfair mt-6">Luxury Suites</h3>
-        <p>Indulge in unparalleled luxury with our exquisite suites. Ideal for a relaxing getaway amidst nature, our suites provide full on-site service, premium amenities, and stunning views for an unforgettable experience.</p>
+  <!-- Pole Section -->
+  <section id="pole" class="course-section">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Pole</h2>
+      <div class="course-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-20 bg-gray-50 text-center md:px-12">
-    <h2 class="text-4xl font-playfair font-bold mb-14">Golf Academy</h2>
-    <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-14 leading-relaxed">
-      Our Golf Academy offers comprehensive lessons tailored for all skill levels, from absolute beginners to advanced players looking to refine their game. All lessons are taught by certified PGA professionals dedicated to helping you achieve your golfing goals.
-    </p>
-    <div class="max-w-2xl mx-auto text-left bg-white rounded-lg shadow-lg overflow-hidden border border-gray-light">
-      <table class="w-full academy-table">
-        <thead>
-          <tr>
-            <th>Lesson</th>
-            <th>Members</th>
-            <th>Guests</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Golf Academy (1h)</td>
-            <td>70 zł</td>
-            <td>90 zł</td>
-          </tr>
-          <tr>
-            <td>Individual Lesson (30 min)</td>
-            <td>40 zł</td>
-            <td>55 zł</td>
-          </tr>
-          <tr>
-            <td>Group Lesson (1.5h, per person)</td>
-            <td>60 zł</td>
-            <td>80 zł</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Noclegi Section -->
+  <section id="noclegi" class="accommodation-section">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title text-white">Noclegi</h2>
+      <p class="text-center text-sm mb-12">CENNIK | GALERIA</p>
+      
+      <div class="accommodation-info">
+        <div class="accommodation-details">
+          <p class="mb-8">„Kalinowe Pola Golf Village" to najnowsza propozycja noclegów dla wszystkich odwiedzających nasze pole golfowe. Z myślą o osobach chcących pozostać u nas dłużej i cieszyć się możliwością korzystania z pełnej palety atrakcji, oddajemy do Państwa dyspozycji 11 komfortowych domków apartamentowych, z których każdy składa się z dwóch oddzielnych pokoi: 2 osobowych z łazienkami i tarasem. Idealne położenie niedaleko budynku klubowego, piękne otoczenie, pola golfowego oraz cisza i spokój gwarantują, że Państwa wypoczynek będzie w pełni udany.</p>
+          
+          <p class="mb-8">Każdy pokój wyposażony jest:</p>
+          <ul class="mb-8">
+            <li>łóżenka z kabiną prysznicową;</li>
+            <li>komplet ręczników i kosmetyków firmy Yves Rocher;</li>
+            <li>telewizor LCD;</li>
+            <li>indywidualny taras z kompletem mebli ogrodowych;</li>
+            <li>lodówkę;</li>
+            <li>klimatyzację;</li>
+          </ul>
+          
+          <h4>Doba hotelowa zaczyna się od godziny 14:00 i kończy o godzinie 12:00. Do wszystkich dysponujemy oddajemy również bezpłatny parking.</h4>
+          
+          <p class="mb-4">W cenie pokoju wliczone jest śniadanie, które serwujemy w restauracji „19th Hole" znajdującej się w budynku klubowym.</p>
+          
+          <p class="mb-4">Rezerwacje pokoi:<br>
+          Mobile: 0048 515 292 034<br>
+          rezerwacje@kalinowepola.pl</p>
+          
+          <p class="mb-4">Godziny otwarcia recepcji:<br>
+          Poniedziałek - Piątek: 09:00 - 17:00<br>
+          Sobota - Niedziela: 08:00 - 17:00</p>
+          
+          <p>Serdecznie Zapraszamy!</p>
+        </div>
+        
+        <div class="accommodation-images">
+          <img src="./public/rooms.jpg" alt="Pokój 1"/>
+          <img src="./public/rooms2.jpg" alt="Pokój 2"/>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="px-6 py-20 bg-white md:px-12">
-    <h2 class="text-4xl font-playfair font-bold text-center mb-14">Contact Us</h2>
-    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto text-lg">
-      <div class="contact-info">
-        <h3 class="text-xl font-semibold mb-4">Club Address</h3>
-        <p>ul. Golfowa 1</p>
-        <p>66-200 Świebodzin</p>
-        <p>Poland</p>
-        <p class="mt-4">📞 +48 123 456 789</p>
-        <p>✉️ contact@kalinowepola.pl</p>
+  <!-- Akademia Section -->
+  <section id="akademia" class="academy-section">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Akademia</h2>
+      <p class="text-center text-sm mb-12">POLE 6-CIO DOŁKOWE | DRIVING RANGE | LEKCJE Z INSTRUKTOREM</p>
+      
+      <div class="academy-content">
+        <p class="academy-description">Z myślą o wszystkich osobach, które dopiero planują rozpocząć swoją przygodę z golfem stworzyliśmy Akademię Golfa. Jeśli to 6 właścicieli golfów majcie przez nas 130 m, na których można grać od razu po odbyciu pierwszych lekcji w golfa. Tutaj nauczać będziemy etykiety oraz reguł golfowych.</p>
+        
+        <h3 class="text-xl font-semibold mb-8 text-gray-800">CENNIK</h3>
+        
+        <div class="pricing-table">
+          <table>
+            <thead>
+              <tr>
+                <th>AKADEMIA GOLFA</th>
+                <th>DLA CZŁONKÓW KPGC</th>
+                <th>DLA GOŚCI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Green fee*</td>
+                <td>0 PLN</td>
+                <td>30 PLN</td>
+              </tr>
+              <tr>
+                <td>Wypożyczenie 1 szt. kija</td>
+                <td>10 PLN</td>
+                <td>15 PLN</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="text-xs text-gray-500 mt-4">* opłata za grę na polu</p>
       </div>
-      <div class="contact-info">
-        <h3 class="text-xl font-semibold mb-4">Billing Address</h3>
-        <p>Kalinowe Pola Sp. z o.o.</p>
-        <p>ul. Rechnicka 3</p>
-        <p>66-200 Świebodzin</p>
-        <p class="mt-4">VAT: PL123456789</p>
-      </div>
-    </div>
-    <div class="mt-16 w-full max-w-5xl mx-auto map-container">
-      <iframe class="w-full h-80 rounded-lg shadow-lg border-gray-300"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.227441315875!2d15.3533924!3d52.2476566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47061d471d6d6e1b%3A0x47061d471d6d6e1b!2sKalinowe%20Pola%20Golf%20Course!5e0!3m2!1sen!2spl!4v1700000000000!5m2!1sen!2spl"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
     </div>
   </section>
 
-  <footer class="text-center text-base text-gray-500 py-10 bg-gray-100">
-    © 2025 Kalinowe Pola Golf Course. All rights reserved.
+  <!-- ABC Golfa Section -->
+  <section id="abc-golfa" class="history-section">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title text-white">ABC Golfa</h2>
+      
+      <div class="history-content">
+        <p class="mb-6">Nikt dokładnie nie wie, gdzie i kiedy narodziła się historia golfa. Legenda głosi, że wymyślili go szkoccy pasterze owiec... a pierwsze zapisy o grze pochodzą z roku 1457... wiadomo także, że chętnie grywała w golfa Maria Stuart - pierwszy klub golfowy założono w połowie XVIII wieku...</p>
+        
+        <p class="mb-6">Genealogia golfa do dziś pozostaje niezbyt jasna. Podobno już w średniowiecznej Europie istniało kilka gier polegających na uderzaniu do celu piłek przy użyciu metalowych kijów. Na Zachodzie, na ulicach Francji i Włoch grano namiętnie w pallmaille (kiedy gra ta dotarła w XVII wieku do Anglii, wybudowano w centrum Londynu miejsce do gry nazywane do dziś Pall Mall). Na dużych otwartych przestrzeniach belgijskich miast rozgrywano mecze chole, a na holenderskich lodowiskach cofla. Można wnioskować, że to właśnie holenderscy marynarze „przywieźli swoiego golfa" do Anglii i Szkocji.</p>
+        
+        <p>Źródła historyczne donoszą, że w 1457 roku król Szkocji James IV wydał edykt zabraniający gry swoim poddanym, którzy poświęcali na nią czas przeznaczony na obowiązkowe ćwiczenia łucznicze. Zakaz został jednak szybko zaleńczowy po pięciu latach zniesiony, gdy król sam zaczął grywać w golfa bardzo chętnie i namiętnie. Jemu właśnie przypisuje się rozpowszechnienie gry (w formie zbliżonej do tej, jaką znamy obecnie) na terenie Anglii i Szkocji.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt Section -->
+  <section id="kontakt" class="contact-section">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Kontakt</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h4>Adres pola:</h4>
+          <p>Kalinowo k/Niesulic</p>
+          <p>66-213 Skąpe</p>
+          <p>woj. lubuskie</p>
+          <p>marketing@kalinowepola.pl</p>
+          <p>tel. +48 515 292 034</p>
+          <p>GPS: 52o 12'32.55"N  15o 22' 34.75" E</p>
+          
+          <h4>Dane do faktury:</h4>
+          <p>Kalinowe Pola Sp. z o.o.</p>
+          <p>ul.Golfowa 1, Kalinowo</p>
+          <p>66-213 Skąpe</p>
+          <p>NIP: 927-190-69-64</p>
+          <p>REGON: 080291908</p>
+          <p>KRS: 0000316925</p>
+          <p>BZ WBK PL 73 1090 1593 0000 0001 1028 5380</p>
+          <p>BZ WBK EUR 30 1090 1593 0000 0001 3215 5386</p>
+        </div>
+        
+        <div class="map-container">
+          <img src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.227441315875!2d15.3533924!3d52.2476566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47061d471d6d6e1b%3A0x47061d471d6d6e1b!2sKalinowe%20Pola%20Golf%20Course!5e0!3m2!1sen!2spl!4v1700000000000!5m2!1sen!2spl" alt="Mapa lokalizacji Kalinowe Pola" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container mx-auto px-6">
+      <div class="footer-links">
+        <a href="#">Polityka Prywatności</a>
+        <a href="#">Regulamin</a>
+        <a href="#">Współpraca</a>
+        <a href="#">Noclegi</a>
+        <a href="#">Restauracja</a>
+        <a href="#">Hotel</a>
+      </div>
+      <p class="text-sm text-gray-400">&copy; 2018 Kalinowe Pola Golf Course. Wszystkie prawa zastrzeżone.</p>
+    </div>
   </footer>
 
 </body>

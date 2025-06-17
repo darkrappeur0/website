@@ -23,7 +23,7 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      padding: 5px 0; /* Adjusted padding to match screenshot */
+      padding: 10px 0; /* Adjust padding for better look */
     }
 
     .logo-container {
@@ -38,127 +38,109 @@
     }
 
     .logo-text h1 {
-      font-size: 24px; /* Larger font size for H1 in logo */
+      font-size: 20px;
       font-weight: 700;
-      color: #555; /* Slightly lighter than pure black */
+      color: #333; /* Darker text for better contrast */
       line-height: 1;
     }
 
     .logo-text p {
-      font-size: 13px; /* Slightly larger font size for slogan */
-      color: #777; /* Lighter color for slogan */
+      font-size: 12px;
+      color: #666;
       line-height: 1;
       text-transform: uppercase;
-      font-weight: 500; /* Added font-weight */
     }
 
     .nav-link {
-      color: #777; /* Adjusted color for nav links */
-      font-weight: 500; /* Adjusted font-weight */
+      color: #8B7355;
+      font-weight: 500;
       text-transform: uppercase;
-      font-size: 13px; /* Adjusted font size */
+      font-size: 14px;
       letter-spacing: 0.5px;
       transition: color 0.3s ease;
-      padding: 5px 0;
+      padding: 5px 0; /* Add padding for clickable area */
     }
 
     .nav-link:hover {
-      color: #93C63A; /* Hover color matching green accent */
+      color: #5A9B9B;
     }
 
     .lang-search {
       display: flex;
       align-items: center;
-      gap: 10px; /* Reduced gap */
+      gap: 15px;
     }
 
     .lang-selector a {
-      color: #AAA; /* Lighter color for inactive language */
-      font-size: 11px; /* Smaller font size */
+      color: #999;
+      font-size: 12px;
       font-weight: 600;
       margin: 0 2px;
       transition: color 0.3s ease;
     }
 
     .lang-selector a.active {
-      color: #555; /* Darker color for active language */
+      color: #333;
     }
 
     .lang-selector a:hover {
-      color: #93C63A;
+      color: #5A9B9B;
     }
 
     .search-icon {
-      color: #AAA; /* Lighter color for search icon */
-      font-size: 16px; /* Slightly smaller icon */
+      color: #999;
+      font-size: 18px;
       cursor: pointer;
       transition: color 0.3s ease;
     }
 
     .search-icon:hover {
-      color: #93C63A;
+      color: #5A9B9B;
     }
 
     /* Weather widget */
     .weather-widget {
-      background: rgba(147, 198, 58, 0.9); /* Green accent color with transparency */
+      background: #5A9B9B;
       color: white;
-      padding: 8px 12px; /* Adjusted padding */
-      border-radius: 6px; /* Slightly smaller border-radius */
+      padding: 10px 15px; /* Adjusted padding */
+      border-radius: 8px;
       text-align: center;
-      min-width: 110px; /* Reduced min-width */
+      min-width: 120px;
       position: absolute;
-      top: 70px; /* Position below header, adjusted */
+      top: 100px; /* Position below header */
       right: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Lighter shadow */
-      font-size: 12px; /* Overall smaller font size for widget */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .weather-title {
-      font-size: 10px; /* Smaller font size */
+      font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px; /* Reduced letter spacing */
-      margin-bottom: 3px; /* Adjusted margin */
-      opacity: 0.9;
+      letter-spacing: 1px;
+      margin-bottom: 5px; /* Adjusted margin */
     }
 
     .weather-info {
-      font-size: 12px; /* Adjusted font size */
+      font-size: 13px; /* Adjusted font size */
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 3px; /* Reduced gap */
-      margin-bottom: 3px;
-      font-weight: 600;
-    }
-    .weather-info span:first-child {
-      font-size: 10px; /* "Dziś" smaller */
-      opacity: 0.8;
-    }
-    .weather-info span:nth-child(2) {
-      font-size: 16px; /* Temperature larger */
-      font-weight: 700;
-    }
-    .weather-info i {
-        font-size: 18px; /* Weather icon size */
+      gap: 5px;
+      margin-bottom: 5px;
     }
 
     .weather-details {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 3px; /* Reduced gap */
-      font-size: 9px; /* Smaller font size */
-      opacity: 0.7;
-      margin-top: 3px;
-    }
-    .weather-details i {
-        font-size: 14px; /* Icons in details */
+      gap: 5px;
+      font-size: 10px;
+      opacity: 0.8;
+      margin-top: 5px;
     }
 
     /* Hero section */
     .hero-section {
-      background-image: url('./public/hero.png');
+      background-image: url('./public/hero.png'); /* New image */
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -167,106 +149,96 @@
       justify-content: flex-start;
       position: relative;
       padding-left: 80px;
-      margin-top: 60px; /* Offset for fixed header, adjusted for new header height */
-    }
-    .hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.1); /* Very slight overlay */
+      margin-top: 80px; /* Offset for fixed header */
     }
 
     .hero-menu {
-      background: rgba(0,0,0,0.6); /* Slightly less opaque */
+      background: rgba(0,0,0,0.7);
       color: white;
-      padding: 30px 25px; /* Adjusted padding */
-      border-radius: 8px; /* Slightly smaller border-radius */
-      backdrop-filter: blur(5px); /* Less blur */
-      box-shadow: 0 3px 15px rgba(0,0,0,0.2); /* Lighter shadow */
-      z-index: 10; /* Ensure it's above the overlay */
+      padding: 40px 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
 
     .hero-menu h3 {
-      color: #93C63A; /* Green accent for title */
-      font-size: 14px; /* Smaller font size */
+      color: #DAA520;
+      font-size: 16px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1.5px; /* Reduced letter spacing */
-      margin-bottom: 20px; /* Reduced margin */
+      letter-spacing: 2px;
+      margin-bottom: 25px;
     }
 
     .hero-menu ul li {
-      margin-bottom: 10px; /* Reduced margin */
-      font-size: 13px; /* Smaller font size */
+      margin-bottom: 12px;
+      font-size: 14px;
       color: #E0E0E0;
       cursor: pointer;
       transition: color 0.3s ease;
     }
 
     .hero-menu ul li:hover {
-      color: #93C63A;
+      color: #DAA520;
     }
 
     /* Section styles - general */
     .section-title {
-      color: #555; /* Darker gray for section titles */
-      font-size: 30px; /* Slightly smaller font size */
+      color: #8B7355;
+      font-size: 32px;
       font-weight: 300;
       text-transform: uppercase;
-      letter-spacing: 2px; /* Reduced letter spacing */
+      letter-spacing: 3px;
       text-align: center;
-      margin-bottom: 40px; /* Reduced margin */
+      margin-bottom: 50px;
     }
 
     /* Aktualności section */
     .news-item {
       background: white;
-      padding: 25px; /* Adjusted padding */
-      margin-bottom: 15px; /* Reduced margin */
-      border-left: 3px solid #93C63A; /* Green accent border */
-      box-shadow: 0 1px 8px rgba(0,0,0,0.08); /* Lighter shadow */
-      position: relative;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-left: 4px solid #DAA520;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      position: relative; /* For the arrow */
     }
 
     .news-date {
-      color: #999; /* Lighter color for date */
-      font-size: 11px; /* Smaller font size */
+      color: #8B7355;
+      font-size: 12px;
       font-weight: 600;
-      margin-bottom: 8px; /* Reduced margin */
+      margin-bottom: 10px;
     }
 
     .news-title {
-      color: #444; /* Darker color for title */
-      font-size: 16px; /* Slightly smaller font size */
+      color: #333;
+      font-size: 18px;
       font-weight: 600;
-      margin-bottom: 10px; /* Reduced margin */
+      margin-bottom: 15px;
     }
 
     .news-content {
-      color: #777; /* Lighter color for content */
-      line-height: 1.7; /* Slightly increased line height for readability */
-      font-size: 13px; /* Slightly smaller font size */
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
     }
 
     .read-more {
-      color: #93C63A; /* Green accent for read more */
-      font-size: 11px; /* Smaller font size */
+      color: #5A9B9B;
+      font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.8px; /* Reduced letter spacing */
-      margin-top: 10px; /* Reduced margin */
+      letter-spacing: 1px;
+      margin-top: 15px;
       display: inline-block;
     }
 
     /* Shared arrow style */
     .scroll-arrow {
-      font-size: 30px; /* Smaller arrow */
-      color: #93C63A; /* Green accent color */
+      font-size: 40px;
+      color: #DAA520;
       text-align: center;
-      margin-top: 30px; /* Reduced margin */
+      margin-top: 40px;
       animation: bounce 1.5s infinite;
     }
 
@@ -275,23 +247,23 @@
         transform: translateY(0);
       }
       40% {
-        transform: translateY(-10px); /* Reduced bounce height */
+        transform: translateY(-15px);
       }
       60% {
-        transform: translateY(-5px); /* Reduced bounce height */
+        transform: translateY(-7px);
       }
     }
 
-    /* Tournament section */
+        /* Tournament section */
     .tournament-section {
-      background: linear-gradient(135deg, #FF7B4C, #FFAA00); /* Orange/Yellow gradient, adjusted to match screenshot */
+      background: linear-gradient(135deg, #FF6B35, #DAA520); /* Le dégradé de couleur */
       color: white;
       padding: 80px 0;
       position: relative;
       overflow: hidden;
-      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%); /* Adjusted clip-path for less extreme angles */
-      padding-top: 120px; /* Adjusted padding for clip-path */
-      padding-bottom: 120px; /* Adjusted padding for clip-path */
+      clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%); /* La découpe diagonale */
+      padding-top: 150px; /* Ajustement pour la découpe */
+      padding-bottom: 150px; /* Ajustement pour la découpe */
     }
 
     .tournament-section::before {
@@ -301,36 +273,35 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('./public/tournaments.jpg');
+      background-image: url('./public/tournaments.jpg'); /* L'image de fond */
       background-size: cover;
       background-position: center;
-      opacity: 0.2; /* Slightly less opaque overlay */
-      z-index: 1;
+      opacity: 0.3; /* L'opacité pour l'effet de superposition */
+      z-index: 1; /* S'assure que l'image est en dessous du contenu */
     }
 
     .tournament-section > .container {
       position: relative;
-      z-index: 2;
+      z-index: 2; /* S'assure que le contenu est au-dessus de l'image de fond */
     }
 
     .tournament-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px; /* Reduced gap */
-      max-width: 900px; /* Reduced max-width */
+      gap: 60px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .tournament-month {
-      margin-bottom: 25px; /* Reduced margin */
+      margin-bottom: 30px;
     }
 
     .tournament-month h4 {
-      font-size: 17px; /* Slightly smaller font size */
+      font-size: 18px;
       font-weight: 600;
-      margin-bottom: 12px; /* Reduced margin */
+      margin-bottom: 15px;
       color: #FFF;
-      opacity: 0.95;
     }
 
     .tournament-list {
@@ -339,12 +310,9 @@
     }
 
     .tournament-list li {
-      margin-bottom: 6px; /* Reduced margin */
-      font-size: 13px; /* Slightly smaller font size */
-      color: rgba(255,255,255,0.8); /* Slightly more transparent */
-    }
-    .tournament-section .section-title {
-        color: white; /* Ensure title is white */
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
     }
 
     /* Course section */
@@ -352,55 +320,51 @@
       background: white;
       padding: 80px 0;
       position: relative;
-      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%); /* Adjusted clip-path */
-      margin-top: -80px; /* Adjusted overlap */
-      padding-top: 120px;
-      padding-bottom: 120px;
+      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 85%); /* Diagonal cut */
+      margin-top: -70px; /* Overlap with previous section */
+      padding-top: 150px;
+      padding-bottom: 150px;
     }
 
     .course-description {
-      max-width: 700px; /* Reduced max-width */
+      max-width: 800px;
       margin: 0 auto;
       text-align: center;
-      color: #777; /* Lighter color */
-      line-height: 1.7;
-      font-size: 14px; /* Smaller font size */
-    }
-    .course-section .section-title {
-        color: #555;
+      color: #666;
+      line-height: 1.8;
+      font-size: 16px;
     }
 
     /* Accommodation section */
     .accommodation-section {
-      background: #7DB952; /* Greenish background, adjusted to match screenshot */
+      background: #5A9B9B;
       color: white;
       padding: 80px 0;
       position: relative;
-      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%); /* Adjusted clip-path */
-      margin-top: -80px; /* Adjusted overlap */
-      padding-top: 120px;
-      padding-bottom: 120px;
+      clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%); /* Diagonal cut */
+      margin-top: -70px; /* Overlap */
+      padding-top: 150px;
+      padding-bottom: 150px;
     }
 
     .accommodation-info {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px; /* Reduced gap */
-      max-width: 900px; /* Reduced max-width */
+      gap: 60px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .accommodation-details {
-      font-size: 13px; /* Smaller font size */
-      line-height: 1.7;
-      color: rgba(255,255,255,0.9); /* Slightly transparent white */
+      font-size: 14px;
+      line-height: 1.8;
     }
 
     .accommodation-details h4 {
-      color: #FFC107; /* Yellow accent for subheadings */
-      font-size: 15px; /* Slightly smaller font size */
+      color: #DAA520;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 12px; /* Reduced margin */
+      margin-bottom: 15px;
     }
 
     .accommodation-details ul {
@@ -409,38 +373,29 @@
     }
 
     .accommodation-details ul li {
-      margin-bottom: 6px; /* Reduced margin */
+      margin-bottom: 8px;
       position: relative;
-      padding-left: 18px; /* Adjusted padding */
+      padding-left: 20px;
     }
 
     .accommodation-details ul li:before {
-      content: "•"; /* Changed bullet to a simple dot */
-      color: #FFC107; /* Yellow accent for bullets */
+      content: "●";
+      color: #DAA520;
       position: absolute;
       left: 0;
-      font-size: 1.2em; /* Slightly larger bullet */
-      line-height: 1;
     }
 
     .accommodation-images {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px; /* Reduced gap */
+      gap: 20px;
     }
 
     .accommodation-images img {
       width: 100%;
-      height: 180px; /* Reduced height */
+      height: 200px;
       object-fit: cover;
-      border-radius: 8px; /* Slightly smaller border-radius */
-    }
-    .accommodation-section .section-title {
-        color: white;
-    }
-    .accommodation-section .text-center.text-sm.mb-12 {
-        font-size: 13px; /* Adjust font size for sub-heading */
-        opacity: 0.9;
+      border-radius: 10px;
     }
 
     /* Academy section */
@@ -448,31 +403,31 @@
       background: white;
       padding: 80px 0;
       position: relative;
-      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%); /* Adjusted clip-path */
-      margin-top: -80px; /* Adjusted overlap */
-      padding-top: 120px;
-      padding-bottom: 120px;
+      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 85%); /* Diagonal cut */
+      margin-top: -70px; /* Overlap */
+      padding-top: 150px;
+      padding-bottom: 150px;
     }
 
     .academy-content {
-      max-width: 700px; /* Reduced max-width */
+      max-width: 800px;
       margin: 0 auto;
       text-align: center;
     }
 
     .academy-description {
-      color: #777;
-      line-height: 1.7;
-      margin-bottom: 30px; /* Reduced margin */
-      font-size: 14px; /* Smaller font size */
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 40px;
     }
 
     .pricing-table {
       background: white;
-      border-radius: 8px; /* Slightly smaller border-radius */
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08); /* Lighter shadow */
-      max-width: 500px; /* Reduced max-width */
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .pricing-table table {
@@ -481,21 +436,19 @@
     }
 
     .pricing-table th {
-      background: #4A4A4A; /* Darker gray for table header */
+      background: #8B7355;
       color: white;
-      padding: 15px; /* Reduced padding */
+      padding: 20px;
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 13px; /* Smaller font size */
-      letter-spacing: 0.8px; /* Reduced letter spacing */
+      font-size: 14px;
+      letter-spacing: 1px;
     }
 
     .pricing-table td {
-      padding: 12px 15px; /* Reduced padding */
-      border-bottom: 1px solid #EAEAEA; /* Lighter border */
+      padding: 15px 20px;
+      border-bottom: 1px solid #E0E0E0;
       text-align: center;
-      color: #666; /* Darker text for cells */
-      font-size: 13px; /* Smaller font size */
     }
 
     .pricing-table td:first-child {
@@ -504,37 +457,21 @@
     }
 
     .pricing-table tr:nth-child(even) {
-      background: #F8F8F8; /* Lighter background for even rows */
-    }
-    .academy-section .section-title {
-        color: #555;
-    }
-    .academy-section .text-center.text-sm.mb-12 {
-        font-size: 13px;
-        color: #888;
-    }
-    .academy-content .text-xl.font-semibold.mb-8.text-gray-800 {
-        font-size: 18px; /* Smaller heading for CENNIK */
-        color: #555;
-        font-weight: 600;
-    }
-    .academy-content .text-xs.text-gray-500.mt-4 {
-        font-size: 10px; /* Smaller footnote */
-        color: #999;
+      background: #F9F9F9;
     }
 
     /* History section */
     .history-section {
-      background-image: url('./public/hero2.png');
+      background-image: url('./public/hero2.png'); /* New image */
       background-size: cover;
       background-position: center;
       color: white;
       padding: 80px 0;
       position: relative;
-      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%); /* Adjusted clip-path */
-      margin-top: -80px; /* Adjusted overlap */
-      padding-top: 120px;
-      padding-bottom: 120px;
+      clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%); /* Diagonal cut */
+      margin-top: -70px; /* Overlap */
+      padding-top: 150px;
+      padding-bottom: 150px;
     }
 
     .history-section::before {
@@ -544,7 +481,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.5); /* Slightly less opaque overlay */
+      background-color: rgba(0,0,0,0.6); /* Overlay effect */
       z-index: 1;
     }
 
@@ -554,58 +491,49 @@
     }
 
     .history-content {
-      max-width: 700px; /* Reduced max-width */
+      max-width: 800px;
       margin: 0 auto;
-      line-height: 1.7;
-      font-size: 14px; /* Smaller font size */
-      color: rgba(255,255,255,0.9);
+      line-height: 1.8;
+      font-size: 15px;
     }
-    .history-content p {
-        margin-bottom: 15px; /* Reduced margin */
-    }
-    .history-section .section-title {
-        color: white;
-    }
-
 
     /* Contact section */
     .contact-section {
       background: #F5F5F5;
       padding: 80px 0;
       position: relative;
-      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%); /* Adjusted clip-path */
-      margin-top: -80px; /* Adjusted overlap */
-      padding-top: 120px;
-      padding-bottom: 120px;
+      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 85%); /* Diagonal cut */
+      margin-top: -70px; /* Overlap */
+      padding-top: 150px;
+      padding-bottom: 150px;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px; /* Reduced gap */
-      max-width: 900px; /* Reduced max-width */
+      gap: 60px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .contact-info h4 {
-      color: #555; /* Darker color for contact headings */
-      font-size: 16px; /* Slightly smaller font size */
+      color: #8B7355;
+      font-size: 18px;
       font-weight: 600;
-      margin-bottom: 15px; /* Reduced margin */
+      margin-bottom: 20px;
     }
 
     .contact-info p {
-      color: #777; /* Lighter color for contact text */
-      margin-bottom: 6px; /* Reduced margin */
-      font-size: 13px; /* Smaller font size */
+      color: #666;
+      margin-bottom: 8px;
+      font-size: 14px;
     }
 
     .map-container {
       background: #E0E0E0;
-      height: 250px; /* Reduced height */
-      border-radius: 8px; /* Slightly smaller border-radius */
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Added shadow */
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden; /* Ensure map fits within border-radius */
     }
 
     .map-container img {
@@ -613,52 +541,34 @@
       height: 100%;
       object-fit: cover;
     }
-    .contact-section .section-title {
-        color: #555;
-    }
 
     /* Footer */
     .footer {
       background: #333;
       color: white;
       text-align: center;
-      padding: 30px 0; /* Reduced padding */
+      padding: 40px 0;
       position: relative;
-      z-index: 10;
+      z-index: 10; /* Ensure footer is above angled sections */
     }
 
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 20px; /* Reduced gap */
-      margin-bottom: 15px; /* Reduced margin */
+      gap: 30px;
+      margin-bottom: 20px;
     }
 
     .footer-links a {
-      color: #BBB; /* Lighter color for footer links */
-      font-size: 11px; /* Smaller font size */
+      color: #999;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.8px; /* Reduced letter spacing */
+      letter-spacing: 1px;
       transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
-      color: #93C63A; /* Green accent on hover */
-    }
-    .footer .logo-golf-player {
-        width: 40px; /* Smaller logo in footer */
-    }
-    .footer .logo-text h1 {
-        font-size: 18px; /* Smaller H1 in footer */
-        color: white;
-    }
-    .footer .logo-text p {
-        font-size: 11px; /* Smaller slogan in footer */
-        color: #999;
-    }
-    .footer .text-sm.text-gray-400 {
-        font-size: 11px; /* Smaller copyright text */
-        color: #999;
+      color: #DAA520;
     }
 
     /* Responsive */
@@ -674,42 +584,32 @@
         margin-top: 10px;
       }
       .weather-widget {
-        position: static;
+        position: static; /* Position normally on smaller screens */
         margin-top: 10px;
         width: auto;
       }
       .hero-section {
         padding-left: 20px;
-        margin-top: 140px; /* Adjusted for smaller header */
+        margin-top: 180px; /* More space for wrapped header */
       }
       .tournament-section, .course-section, .accommodation-section, .academy-section, .history-section, .contact-section {
-        clip-path: none;
-        padding-top: 60px; /* Reduced padding */
-        padding-bottom: 60px; /* Reduced padding */
+        clip-path: none; /* Remove diagonal cuts on smaller screens */
+        padding-top: 80px;
+        padding-bottom: 80px;
         margin-top: 0;
-      }
-      .tournament-section .section-title,
-      .accommodation-section .section-title,
-      .history-section .section-title {
-          font-size: 28px; /* Slightly smaller titles on medium screens */
       }
     }
 
     @media (max-width: 768px) {
       .hero-section {
         padding-left: 20px;
-        height: 80vh; /* Reduced hero height */
-        margin-top: 100px; /* Further adjust for smaller screens */
-      }
-      .hero-menu {
-          padding: 20px; /* Reduced padding for hero menu */
       }
       
       .tournament-grid,
       .accommodation-info,
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 30px; /* Further reduced gap */
+        gap: 40px;
       }
       
       .accommodation-images {
@@ -723,50 +623,34 @@
       .header nav {
         flex-direction: column;
         text-align: center;
-        gap: 8px; /* Reduced gap */
+        gap: 10px;
       }
       .lang-search {
         flex-direction: column;
-        gap: 8px; /* Reduced gap */
-      }
-      .section-title {
-          font-size: 24px; /* Even smaller titles on small screens */
-          margin-bottom: 30px;
-      }
-      .news-item, .contact-info, .history-content, .course-description, .accommodation-details, .academy-description {
-          font-size: 12px; /* Smaller body text on small screens */
-          line-height: 1.6;
-      }
-      .pricing-table th, .pricing-table td {
-          font-size: 12px; /* Smaller table text */
-          padding: 10px 12px;
-      }
-      .footer-links {
-          flex-wrap: wrap;
-          gap: 10px; /* Smaller gap in wrapped footer links */
+        gap: 10px;
       }
     }
 
     /* Specific image for logo in header */
     .logo-golf-player {
-        width: 45px; /* Adjusted size */
+        width: 50px; /* Adjust size as needed */
         height: auto;
     }
-  </style>
+    </style>
 </head>
 <body>
 
   <header class="header">
-    <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="logo-container">
         <img src="./public/logo.svg" alt="Kalinowe Pola Logo" class="logo-golf-player">
         <div class="logo-text">
-          <h1>KALINOWE POLA</h1>
-          <p>GOLF COURSE</p>
+          <h1 class="text-xl font-bold">KALINOWE POLA</h1>
+          <p class="text-sm">GOLF COURSE</p>
         </div>
       </div>
       
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex space-x-8">
         <a href="#aktualnosci" class="nav-link">Aktualności</a>
         <a href="#turnieje" class="nav-link">Turnieje</a>
         <a href="#pole" class="nav-link">Pole</a>
@@ -801,6 +685,11 @@
         <span>8°</span>
         <span>15°</span>
         <span>12°</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
         <i class="fas fa-cloud"></i>
         <i class="fas fa-sun"></i>
         <i class="fas fa-cloud-sun"></i>
@@ -865,7 +754,7 @@
   <section id="turnieje" class="tournament-section">
     <div class="container mx-auto px-6">
       <h2 class="section-title text-white">Turnieje</h2>
-      <h3 class="text-center text-xl font-light mb-10 opacity-90">KALENDARZ TURNIEJÓW 2018</h3>
+      <h3 class="text-center text-2xl font-light mb-12">KALENDARZ TURNIEJÓW 2018</h3>
       
       <div class="tournament-grid">
         <div>
@@ -929,14 +818,14 @@
   <section id="noclegi" class="accommodation-section">
     <div class="container mx-auto px-6">
       <h2 class="section-title text-white">Noclegi</h2>
-      <p class="text-center text-sm mb-10 opacity-90">CENNIK | GALERIA</p>
+      <p class="text-center text-sm mb-12">CENNIK | GALERIA</p>
       
       <div class="accommodation-info">
         <div class="accommodation-details">
-          <p class="mb-6">„Kalinowe Pola Golf Village" to najnowsza propozycja noclegów dla wszystkich odwiedzających nasze pole golfowe. Z myślą o osobach chcących pozostać u nas dłużej i cieszyć się możliwością korzystania z pełnej palety atrakcji, oddajemy do Państwa dyspozycji 11 komfortowych domków apartamentowych, z których każdy składa się z dwóch oddzielnych pokoi: 2 osobowych z łazienkami i tarasem. Idealne położenie niedaleko budynku klubowego, piękne otoczenie, pola golfowego oraz cisza i spokój gwarantują, że Państwa wypoczynek będzie w pełni udany.</p>
+          <p class="mb-8">„Kalinowe Pola Golf Village" to najnowsza propozycja noclegów dla wszystkich odwiedzających nasze pole golfowe. Z myślą o osobach chcących pozostać u nas dłużej i cieszyć się możliwością korzystania z pełnej palety atrakcji, oddajemy do Państwa dyspozycji 11 komfortowych domków apartamentowych, z których każdy składa się z dwóch oddzielnych pokoi: 2 osobowych z łazienkami i tarasem. Idealne położenie niedaleko budynku klubowego, piękne otoczenie, pola golfowego oraz cisza i spokój gwarantują, że Państwa wypoczynek będzie w pełni udany.</p>
           
-          <p class="mb-6">Każdy pokój wyposażony jest:</p>
-          <ul class="mb-6">
+          <p class="mb-8">Każdy pokój wyposażony jest:</p>
+          <ul class="mb-8">
             <li>łóżenka z kabiną prysznicową;</li>
             <li>komplet ręczników i kosmetyków firmy Yves Rocher;</li>
             <li>telewizor LCD;</li>
@@ -947,11 +836,13 @@
           
           <h4>Doba hotelowa zaczyna się od godziny 14:00 i kończy o godzinie 12:00. Do wszystkich dysponujemy oddajemy również bezpłatny parking.</h4>
           
-          <p class="mb-3">Rezerwacje pokoi:<br>
+          <p class="mb-4">W cenie pokoju wliczone jest śniadanie, które serwujemy w restauracji „19th Hole" znajdującej się w budynku klubowym.</p>
+          
+          <p class="mb-4">Rezerwacje pokoi:<br>
           Mobile: 0048 515 292 034<br>
           rezerwacje@kalinowepola.pl</p>
           
-          <p class="mb-3">Godziny otwarcia recepcji:<br>
+          <p class="mb-4">Godziny otwarcia recepcji:<br>
           Poniedziałek - Piątek: 09:00 - 17:00<br>
           Sobota - Niedziela: 08:00 - 17:00</p>
           
@@ -972,12 +863,12 @@
   <section id="akademia" class="academy-section">
     <div class="container mx-auto px-6">
       <h2 class="section-title">Akademia</h2>
-      <p class="text-center text-sm mb-10 text-gray-700">POLE 6-CIO DOŁKOWE | DRIVING RANGE | LEKCJE Z INSTRUKTOREM</p>
+      <p class="text-center text-sm mb-12">POLE 6-CIO DOŁKOWE | DRIVING RANGE | LEKCJE Z INSTRUKTOREM</p>
       
       <div class="academy-content">
         <p class="academy-description">Z myślą o wszystkich osobach, które dopiero planują rozpocząć swoją przygodę z golfem stworzyliśmy Akademię Golfa. Jeśli to 6 właścicieli golfów majcie przez nas 130 m, na których można grać od razu po odbyciu pierwszych lekcji w golfa. Tutaj nauczać będziemy etykiety oraz reguł golfowych.</p>
         
-        <h3 class="text-xl font-semibold mb-6 text-gray-700">CENNIK</h3>
+        <h3 class="text-xl font-semibold mb-8 text-gray-800">CENNIK</h3>
         
         <div class="pricing-table">
           <table>
@@ -1016,9 +907,9 @@
       <h2 class="section-title text-white">ABC Golfa</h2>
       
       <div class="history-content">
-        <p class="mb-5">Nikt dokładnie nie wie, gdzie i kiedy narodziła się historia golfa. Legenda głosi, że wymyślili go szkoccy pasterze owiec... a pierwsze zapisy o grze pochodzą z roku 1457... wiadomo także, że chętnie grywała w golfa Maria Stuart - pierwszy klub golfowy założono w połowie XVIII wieku...</p>
+        <p class="mb-6">Nikt dokładnie nie wie, gdzie i kiedy narodziła się historia golfa. Legenda głosi, że wymyślili go szkoccy pasterze owiec... a pierwsze zapisy o grze pochodzą z roku 1457... wiadomo także, że chętnie grywała w golfa Maria Stuart - pierwszy klub golfowy założono w połowie XVIII wieku...</p>
         
-        <p class="mb-5">Genealogia golfa do dziś pozostaje niezbyt jasna. Podobno już w średniowiecznej Europie istniało kilka gier polegających na uderzaniu do celu piłek przy użyciu metalowych kijów. Na Zachodzie, na ulicach Francji i Włoch grano namiętnie w pallmaille (kiedy gra ta dotarła w XVII wieku do Anglii, wybudowano w centrum Londynu miejsce do gry nazywane do dziś Pall Mall). Na dużych otwartych przestrzeniach belgijskich miast rozgrywano mecze chole, a na holenderskich lodowiskach cofla. Można wnioskować, że to właśnie holenderscy marynarze „przywieźli swoiego golfa" do Anglii i Szkocji.</p>
+        <p class="mb-6">Genealogia golfa do dziś pozostaje niezbyt jasna. Podobno już w średniowiecznej Europie istniało kilka gier polegających na uderzaniu do celu piłek przy użyciu metalowych kijów. Na Zachodzie, na ulicach Francji i Włoch grano namiętnie w pallmaille (kiedy gra ta dotarła w XVII wieku do Anglii, wybudowano w centrum Londynu miejsce do gry nazywane do dziś Pall Mall). Na dużych otwartych przestrzeniach belgijskich miast rozgrywano mecze chole, a na holenderskich lodowiskach cofla. Można wnioskować, że to właśnie holenderscy marynarze „przywieźli swoiego golfa" do Anglii i Szkocji.</p>
         
         <p>Źródła historyczne donoszą, że w 1457 roku król Szkocji James IV wydał edykt zabraniający gry swoim poddanym, którzy poświęcali na nią czas przeznaczony na obowiązkowe ćwiczenia łucznicze. Zakaz został jednak szybko zaleńczowy po pięciu latach zniesiony, gdy król sam zaczął grywać w golfa bardzo chętnie i namiętnie. Jemu właśnie przypisuje się rozpowszechnienie gry (w formie zbliżonej do tej, jaką znamy obecnie) na terenie Anglii i Szkocji.</p>
       </div>
@@ -1065,11 +956,11 @@
 
   <footer class="footer">
     <div class="container mx-auto px-6">
-      <div class="logo-container mb-3 justify-center">
+      <div class="logo-container mb-4 justify-center">
         <img src="./public/logo.svg" alt="Kalinowe Pola Logo" class="logo-golf-player mr-2">
         <div class="logo-text text-left">
-            <h1>KALINOWE POLA</h1>
-            <p>GOLF COURSE</p>
+            <h1 class="text-xl font-bold text-white">KALINOWE POLA</h1>
+            <p class="text-sm text-gray-400">GOLF COURSE</p>
         </div>
       </div>
       <div class="footer-links">
